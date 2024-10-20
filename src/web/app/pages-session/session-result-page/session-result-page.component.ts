@@ -108,6 +108,16 @@ export class SessionResultPageComponent implements OnInit {
 
   private backendUrl: string = environment.backendUrl;
 
+
+  hideMyResponses: boolean = false;
+
+  toggleHideSelfResponses(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.hideMyResponses = target.checked;
+    console.log(this.hideMyResponses)
+  }
+
+
   constructor(private feedbackQuestionsService: FeedbackQuestionsService,
               private feedbackSessionsService: FeedbackSessionsService,
               private route: ActivatedRoute,
